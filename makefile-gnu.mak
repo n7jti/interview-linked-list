@@ -23,9 +23,9 @@ OUTFILE=$(OUTDIR)/linkedlist
 CFG_INC=
 CFG_LIB=
 CFG_OBJ=
-COMMON_OBJ=$(OUTDIR)/linkedlist.o 
+COMMON_OBJ=$(OUTDIR)/linkedlist.o $(OUTDIR)/list.o 
 OBJ=$(COMMON_OBJ) $(CFG_OBJ)
-ALL_OBJ=$(OUTDIR)/linkedlist.o 
+ALL_OBJ=$(OUTDIR)/linkedlist.o $(OUTDIR)/list.o 
 
 COMPILE=g++ -c    -g -o "$(OUTDIR)/$(*F).o" $(CFG_INC) "$<"
 LINK=g++  -g -o "$(OUTFILE)" $(OBJ) $(CFG_LIB)
@@ -64,9 +64,9 @@ OUTFILE=$(OUTDIR)/linkedlist
 CFG_INC=
 CFG_LIB=
 CFG_OBJ=
-COMMON_OBJ=$(OUTDIR)/linkedlist.o 
+COMMON_OBJ=$(OUTDIR)/linkedlist.o $(OUTDIR)/list.o 
 OBJ=$(COMMON_OBJ) $(CFG_OBJ)
-ALL_OBJ=$(OUTDIR)/linkedlist.o 
+ALL_OBJ=$(OUTDIR)/linkedlist.o $(OUTDIR)/list.o 
 
 COMPILE=g++ -c   -o "$(OUTDIR)/$(*F).o" $(CFG_INC) "$<"
 LINK=g++  -o "$(OUTFILE)" $(OBJ) $(CFG_LIB)
@@ -105,9 +105,9 @@ OUTFILE=$(OUTDIR)/linkedlist
 CFG_INC=
 CFG_LIB=
 CFG_OBJ=
-COMMON_OBJ=$(OUTDIR)/linkedlist.o 
+COMMON_OBJ=$(OUTDIR)/linkedlist.o $(OUTDIR)/list.o 
 OBJ=$(COMMON_OBJ) $(CFG_OBJ)
-ALL_OBJ=$(OUTDIR)/linkedlist.o 
+ALL_OBJ=$(OUTDIR)/linkedlist.o $(OUTDIR)/list.o 
 
 COMPILE=clang++ -c    -g -o "$(OUTDIR)/$(*F).o" $(CFG_INC) "$<"
 LINK=clang++  -g -o "$(OUTFILE)" $(OBJ) $(CFG_LIB)
@@ -146,9 +146,9 @@ OUTFILE=$(OUTDIR)/linkedlist
 CFG_INC=
 CFG_LIB=
 CFG_OBJ=
-COMMON_OBJ=$(OUTDIR)/linkedlist.o 
+COMMON_OBJ=$(OUTDIR)/linkedlist.o $(OUTDIR)/list.o 
 OBJ=$(COMMON_OBJ) $(CFG_OBJ)
-ALL_OBJ=$(OUTDIR)/linkedlist.o 
+ALL_OBJ=$(OUTDIR)/linkedlist.o $(OUTDIR)/list.o 
 
 COMPILE=clang++ -c   -o "$(OUTDIR)/$(*F).o" $(CFG_INC) "$<"
 LINK=clang++  -o "$(OUTFILE)" $(OBJ) $(CFG_LIB)

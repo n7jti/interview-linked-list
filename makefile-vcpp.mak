@@ -23,9 +23,9 @@ OUTFILE=$(OUTDIR)\linkedlist
 CFG_INC=
 CFG_LIB=
 CFG_OBJ=
-COMMON_OBJ=$(OUTDIR)\linkedlist.o 
+COMMON_OBJ=$(OUTDIR)\linkedlist.o $(OUTDIR)\list.o 
 OBJ=$(COMMON_OBJ) $(CFG_OBJ)
-ALL_OBJ=$(OUTDIR)\linkedlist.o 
+ALL_OBJ=$(OUTDIR)\linkedlist.o $(OUTDIR)\list.o 
 
 COMPILE=cl /c  /W3 /Zi /Gd /GS /nologo /EHsc /Fo"$(OUTDIR)\$(*F).o" $(CFG_INC) "$<"
 LINK=link /NOLOGO /INCREMENTAL /debug /OUT:"$(OUTFILE)" $(OBJ) $(CFG_LIB)
@@ -64,9 +64,9 @@ OUTFILE=$(OUTDIR)\linkedlist
 CFG_INC=
 CFG_LIB=
 CFG_OBJ=
-COMMON_OBJ=$(OUTDIR)\linkedlist.o 
+COMMON_OBJ=$(OUTDIR)\linkedlist.o $(OUTDIR)\list.o 
 OBJ=$(COMMON_OBJ) $(CFG_OBJ)
-ALL_OBJ=$(OUTDIR)\linkedlist.o 
+ALL_OBJ=$(OUTDIR)\linkedlist.o $(OUTDIR)\list.o 
 
 COMPILE=cl /c  /W3 /Ob0 /Gd /GS /nologo /EHsc /Fo"$(OUTDIR)\$(*F).o" $(CFG_INC) "$<"
 LINK=link /NOLOGO /INCREMENTAL /OUT:"$(OUTFILE)" $(OBJ) $(CFG_LIB)
