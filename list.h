@@ -15,7 +15,6 @@ public:
 private:
     int _value;
     CNode* _pNext;
-
 };
 
 class CList

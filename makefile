@@ -1,3 +1,4 @@
+#Makefile
 CC=gcc
 CXX=g++
 RM=rm -f
@@ -16,7 +17,7 @@ all: linkedlist
 linkedlist: $(OBJS)
 	$(CXX) $(LDFLAGS) -o linkedlist $(OBJS) $(LDLIBS) 
 
-linkedlist.o: linkedlist.cpp list.h
+linkedlist.o: linkedlist.cpp list.h 
 
 list.o: list.cpp list.h
 
