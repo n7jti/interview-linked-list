@@ -18,9 +18,23 @@ TEST_GROUP(ListUnit)
     }
 };
 
-TEST(ListUnit, HelloWorld)
+TEST(ListUnit, DefaultConstructor)
 {
-    printf("HelloWorld\n");
+    CList myList; 
+    for (int i = 0; i < 10; ++i)
+    {
+        CNode* myNode = new CNode;
+        myNode->set(i);
+        myList.push(myNode);
+        myNode = nullptr; 
+    }
+
+    int i = 0;
+    for(CNode* pcur = myList.getHead(); pcur != nullptr; pcur = pcur->getNext(), ++i)
+    {
+        CHECK_TRUE(pcur->get() == 9 - i)
+    }
+
     return;
 }
 

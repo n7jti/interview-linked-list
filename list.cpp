@@ -16,6 +16,7 @@ CNode::~CNode()
     {
         delete _pNext;
     }
+    _pNext = nullptr; 
 }
 
 int  CNode::get()
