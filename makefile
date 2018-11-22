@@ -4,7 +4,7 @@ RM=rm -f
 
 CPPUTEST_HOME=./../cpputest
 
-CXXFLAGS=-g -l$(CPPUTEST_HOME)/include -include $(CPPUTEST_HOME)/include/CppUTest/MemoryLeakDetectorNewMacros.h 
+CXXFLAGS=-g -I $(CPPUTEST_HOME)/include -include $(CPPUTEST_HOME)/include/CppUTest/MemoryLeakDetectorNewMacros.h 
 LDFLAGS=-g 
 LDLIBS=-L$(CPPUTEST_HOME)/lib -lCppUTest -lCppUTestExt
 
