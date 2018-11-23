@@ -105,6 +105,56 @@ TEST(InterviewQuestion, MthToLast1)
 
 }
 
+CNode * MinusN(const CList &list, int n)
+{
+    CNode* pFirst = list.getHead(); 
+    CNode* pSecond = list.getHead(); 
+
+    // Get the first pointer n ahead of the 2nd poiner
+    for(int i = 0; i < n; ++i)
+    {
+        // if we've run out of list, then return NULL
+        if (pFirst == nullptr)
+        {
+            return nullptr; 
+        }
+        pFirst = pFirst->getNext();
+    }
+
+    // Move pFirst up by one so the spacing is right. But, we might 
+    // have just moved off the end and are NULL because the list is 
+    // EXACTLY n long.  SO check that we don't dererence a nullptr. 
+    if (pFirst != nullptr)
+    {
+        pFirst = pFirst->getNext();
+    }
+
+    // now march them in lock step till pFirst runs off the end
+    while (pFirst != nullptr)
+    {
+        pFirst = pFirst->getNext();
+        pSecond = pSecond->getNext();
+    }
+
+    return pSecond;
+}
+
+TEST(InterviewQuestion, MthToLast2)
+{
+    CNode * first;
+    for(int i = 0; i < 9; ++i)
+    {
+        first = MinusN(myList, i);
+        CHECK_FALSE(first == nullptr);
+        CHECK_EQUAL(9-i, first->get());
+    }
+
+    // check if the end isn't far enough away. 
+    first  = MinusN(myList, 100);
+    CHECK_EQUAL(nullptr, first);
+
+}
+
 int main (int argc, char *argv[])
 {
     return RUN_ALL_TESTS(argc, argv);
