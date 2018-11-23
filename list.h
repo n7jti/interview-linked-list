@@ -6,10 +6,10 @@ public:
     CNode();
     ~CNode();
 
-    int get();
+    int get() const;
     void set(int value);
 
-    CNode* getNext();
+    CNode* getNext() const;
     void setNext(CNode  *pNode);
 
 private:
@@ -23,8 +23,8 @@ public:
     CList();
     ~CList();
 
-    CNode* getHead();
-    CNode* getTail();
+    CNode* getHead() const;
+    CNode* getTail() const;
 
     void push(CNode* pNode);
     void pushTail(CNode* pNode);

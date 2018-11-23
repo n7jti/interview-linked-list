@@ -19,7 +19,7 @@ CNode::~CNode()
     _pNext = nullptr; 
 }
 
-int  CNode::get()
+int  CNode::get() const
 {
     return this->_value;
 }
@@ -29,7 +29,7 @@ void  CNode::set(int value)
     this->_value = value;
 }
 
-CNode* CNode::getNext()
+CNode* CNode::getNext() const
 {
     return this->_pNext;
 }
@@ -54,12 +54,12 @@ CList::~CList()
 
 }
 
-CNode* CList::getHead()
+CNode* CList::getHead() const
 {
     return _pHead;
 }
 
-CNode* CList::getTail()
+CNode* CList::getTail() const
 {
     return _pTail; 
 }
@@ -99,11 +99,13 @@ void CList::pushTail(CNode* pNode)
 CNode* CList::pop()
 {
     // get the head node
-    CNode* pNode = _pHead;
+    CNode* pNode = nullptr;
 
     // If there is a head node, set our new head to the next pointer. 
     if (_pHead != nullptr) {
+        pNode = _pHead;
         _pHead = _pHead->getNext();
+        pNode->setNext(nullptr); 
     }
 
     // If we are poping the tail, then set it null
